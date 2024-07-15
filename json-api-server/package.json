@@ -1,0 +1,21 @@
+{
+  "name": "json-api-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./bin/index.js",
+    "dev": "ts-node ./src/index.ts",
+    "run-dev": "npx prism mock -d ./build/openapi_schema.json"
+  },
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "ts-oas": "^0.4.4",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@stoplight/prism-cli": "^5.8.2",
+    "ts-node": "^10.9.2"
+  }
+}

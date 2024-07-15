@@ -1,0 +1,732 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "OpenAPI specification",
+        "version": "1.0.0"
+    },
+    "components": {
+        "schemas": {
+            "AuthorFilterExp": {
+                "type": "object",
+                "properties": {
+                    "$and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuthorFilterExp"
+                        }
+                    },
+                    "$or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuthorFilterExp"
+                        }
+                    },
+                    "$not": {
+                        "$ref": "#/components/schemas/AuthorFilterExp"
+                    },
+                    "author_id": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    },
+                    "name": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "AuthorSortExp": {
+                "type": "object",
+                "properties": {
+                    "author_id": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    },
+                    "name": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "Page": {
+                "type": "object",
+                "properties": {
+                    "[limit]": {
+                        "type": "number"
+                    },
+                    "[offset]": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Author": {
+                "type": "object",
+                "properties": {
+                    "author_id": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "author_id",
+                    "name"
+                ]
+            },
+            "ArticleFilterExp": {
+                "type": "object",
+                "properties": {
+                    "$and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ArticleFilterExp"
+                        }
+                    },
+                    "$or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ArticleFilterExp"
+                        }
+                    },
+                    "$not": {
+                        "$ref": "#/components/schemas/ArticleFilterExp"
+                    },
+                    "article_id": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    },
+                    "title": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    },
+                    "created": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    },
+                    "author_id": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$eq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$eq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$neq": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$neq"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lt": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lt"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$gte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$gte"
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "$lte": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "$lte"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "ArticleSortExp": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    },
+                    "article_id": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    },
+                    "title": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    },
+                    "created": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    },
+                    "author_id": {
+                        "enum": [
+                            "Asc",
+                            "Desc"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "Article": {
+                "type": "object",
+                "properties": {
+                    "article_id": {
+                        "type": "number"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "created": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "author_id": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "article_id",
+                    "author_id",
+                    "created",
+                    "title"
+                ]
+            }
+        }
+    },
+    "paths": {
+        "/authors": {
+            "get": {
+                "operationId": "GetAuthorsAPI",
+                "description": "Authors select many description.",
+                "summary": "Query authors collection with filtering, sorting, pagination capabilities.",
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/AuthorFilterExp"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/AuthorSortExp"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/Page"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Author"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "enum": [
+                                                false
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "success"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/articles": {
+            "get": {
+                "operationId": "GetArticlesAPI",
+                "description": "Articles select many description.",
+                "summary": "Query articles collection with filtering, sorting, pagination capabilities.",
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/ArticleFilterExp"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/ArticleSortExp"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/Page"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Article"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "enum": [
+                                                false
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "success"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

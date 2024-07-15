@@ -1,0 +1,22 @@
+{
+  "name": "json-api-client",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "openapi-fetch": "^0.10.2",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.0.2",
+    "swagger-typescript-api": "^13.0.12",
+    "ts-node": "^10.9.2"
+  }
+}
