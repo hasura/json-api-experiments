@@ -22,9 +22,13 @@ async function getAuthors(): Promise<[Author] | undefined> {
         params: {
             query: {
                 sort: {
-                    author_id: "Desc"
+                    author_id: "Desc",
+                    name: "Asc",
                 },
                 filter: {
+                    author_id: {
+                        $gte: 10
+                    },
                     name: {
                         $eq: "foobar"
                     },
@@ -109,6 +113,7 @@ const api = new Api();
 const resp = await api.authors.getAuthorsApi(
     {
         filter: {
+
             name: {
                 $eq: "John"
             }
@@ -118,6 +123,6 @@ const resp = await api.authors.getAuthorsApi(
 
 console.log(resp);
 
-// The myApi module doesn't compile with current TS options. Throws some stricter TS error. Not spending time to fix it, as its a code generation tool and will always generate faulty code.
+// The myApi module doesn't compile with current TS options. Throws some stricter TS error. Not spending time to fix it, as its a code generation tool and can generate faulty code.
 
 /* ---- END: openapi-typescript client -----  */
