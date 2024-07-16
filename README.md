@@ -60,7 +60,8 @@ The same OpenAPI schema can be used to generate a client which works with this A
 After generating the clients using any of the tools below, one can get auto-complete on the query
 API, and also a typed client.
 
-[Demo](typed_client_demo.webm)
+[typed_client_demo.webm](https://github.com/user-attachments/assets/be2cdf76-bd4b-4948-b33b-63aaeeeb460e)
+
 
 ### Generate using openapi-typescript
 
